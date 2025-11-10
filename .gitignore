@@ -1,0 +1,29 @@
+# Ignore Eclipse & Java build files
+
+# === Eclipse specific files ===
+.project
+.classpath
+.settings/
+.metadata/
+bin/
+tmp/
+
+# === Java specific ===
+*.class
+*.jar
+*.war
+*.ear
+
+# === OS junk ===
+.DS_Store
+Thumbs.db
+
+# === Logs & build output ===
+*.log
+/build/
+target/
+
+# === Other tools ===
+.idea/
+*.iml
+
