@@ -1,0 +1,27 @@
+@startuml
+title edit text
+actor user as u 
+participant app as a
+participant clipboard as c
+u -> a : [user input]
+
+alt write text
+u -> a : any char
+a -> a : insert char
+else remove text
+u -> a : backspace
+a -> a : remove char at cursor
+else CUT
+u -> a : cmd-x
+a -> c : store selected text
+a -> a : remove selected text
+else COPY
+u -> a : cmd-c
+a -> a : store selected text
+else PASTE
+u -> a : cmd-v
+c --> a : return stored text
+a -> a : Insert text
+end
+
+@enduml

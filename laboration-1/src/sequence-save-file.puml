@@ -1,0 +1,8 @@
+@startuml
+title save file
+participant "user" as u
+participant "app" as a
+u -> a : handleEvent(save file)
+a -> a : getText()
+a -> a : saveToFile(text)
+@enduml

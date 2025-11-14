@@ -1,0 +1,23 @@
+@startuml
+title create new file
+participant "user" as u
+participant "app" as a
+u -> a : handleEvent(create file)
+a -> a : checkFileStatus()
+opt checkFileStatus == false
+a -> a : showSaveOptions()
+u -> a : [user input]
+alt chooses save
+a -> a : saveToFile(text)
+else chooses not to save
+end
+end
+a -> a : showFileChooser()
+u -> a : [user input]
+alt success
+a -> a : setCurrFilePath(path)
+a -> a : createNewFile()
+else failure
+a -> a : showErrorMessage()
+end
+@enduml

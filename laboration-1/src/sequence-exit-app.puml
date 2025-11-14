@@ -1,0 +1,13 @@
+@startuml
+title exit app
+participant "user" as u
+participant "app" as a
+u -> a : handleEvent(exitApp)
+a -> a : checkFileStatus()
+opt file != saved
+a -> a : showSaveOptions()
+u -> a : handleEvent(option)
+a -> a : saveToFile(text)
+end
+a -> a : closeApp()
+@enduml

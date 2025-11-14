@@ -1,0 +1,21 @@
+@startuml
+title TextEditor Class Diagram
+
+class TextEditor {
+    + handleEvent()
+    + initialize()
+    + runUI()
+    + checkFileStatus()
+    + showSaveOptions()
+    + saveToFile(text)
+    + closeApp()
+    + showFileChooser()
+    + setCurrFilePath(path)
+    + createNewFile()
+    + showErrorMessage()
+    + loadFromFile(path)
+    + insertText(text)
+    + getText()
+}
+
+@enduml

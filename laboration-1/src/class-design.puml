@@ -1,0 +1,25 @@
+@startuml
+
+class View{
+- JTextArea
+
++ handleEvent()
++ runUI()
++ showSaveOptions()
++ showFileChooser()
++ showErrorMessage()
++ insertText(text)
++ getText()
+}
+
+class Controller{
++ initialize()
+}
+
+class Model{
++ checkFileStatus()
++ saveToFile(text)
++ setCurrFilePath(path)
++ loadFromFile(path)
+}
+@enduml

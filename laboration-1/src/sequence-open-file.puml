@@ -1,0 +1,23 @@
+@startuml
+title open file
+participant "user" as u
+participant "app" as a
+u -> a : handleEvent(open file)
+a -> a : checkFileStatus()
+opt checkFileStatus == false
+a -> a : showSaveOptions()
+u -> a : [user input]
+alt chooses save
+a -> a : saveToFile(text)
+else chooses not to save
+end
+end
+a -> a : showFileChooser()
+u -> a : [user input]
+alt user chooses file
+a -> a : setCurrFilePath(path)
+a -> a : loadFromFile(path)
+a -> a : insertText(text)
+else user cancels
+end
+@enduml

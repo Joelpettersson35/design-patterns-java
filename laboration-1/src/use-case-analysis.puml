@@ -1,0 +1,15 @@
+@startuml
+  left to right direction
+  skinparam packageStyle rect
+  
+  actor user
+  rectangle Texteditor {
+   user -- (start app)
+   user -- (exit app)
+   user -- (open file)
+   user -- (create new file)
+   user -- (edit text)
+   user -- (save file)
+   user -- (save file as)
+  }
+@enduml
