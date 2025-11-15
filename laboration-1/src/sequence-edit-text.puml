@@ -4,7 +4,6 @@ actor user as u
 participant app as a
 participant clipboard as c
 u -> a : [user input]
-
 alt write text
 u -> a : any char
 a -> a : insert char
@@ -23,5 +22,4 @@ u -> a : cmd-v
 c --> a : return stored text
 a -> a : Insert text
 end
-
 @enduml

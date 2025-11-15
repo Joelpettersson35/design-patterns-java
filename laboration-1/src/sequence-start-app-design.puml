@@ -1,0 +1,9 @@
+@startuml
+title start app (design)
+participant user as u
+participant Controller as c
+participant View as v
+u -> c : handleEvent(1)
+c -> c : initialize()
+c -> v : runUI()
+@enduml

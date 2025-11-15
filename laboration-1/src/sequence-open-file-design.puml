@@ -1,0 +1,32 @@
+@startuml
+title open file (design)
+
+participant View as V
+participant Controller as C
+participant Model as M
+
+V -> C : handleEvent(3)
+
+C -> M : fileIsSaved?
+opt file is NOT saved
+C -> V : askUserToSave()
+V -> C : userChoice
+
+alt user chooses to save
+C -> M : hasFilePath?
+opt no file path
+C -> V : askUserForSaveLocation()
+V -> C : fileSelected
+C -> M : setFilePath(path)
+end
+C -> M : saveToFile()
+end
+end
+
+C -> V : askForFile()
+V -> C : fileSelected
+
+C -> M : loadFile(path)
+C -> V : displayText(text)
+
+@enduml

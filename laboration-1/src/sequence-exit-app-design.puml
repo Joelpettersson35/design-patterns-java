@@ -1,0 +1,22 @@
+@startuml
+title exit app (design)
+participant View as v
+participant Controller as c
+participant Model as m
+v -> c : handleEvent(2)
+c -> m : fileIsSaved?
+opt file is NOT saved
+c -> v : askUserToSave()
+v -> c : userChoice
+alt user chooses save
+c -> m :hasFilePath?
+opt no file path
+c -> v : askUserForSaveLocation()
+v -> c : fileSelected
+c -> m : setFilePath(path)
+end
+c -> m : saveToFile()
+end
+end
+c -> c : closeApp()
+@enduml

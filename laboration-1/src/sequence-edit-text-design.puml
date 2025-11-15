@@ -1,0 +1,8 @@
+@startuml
+title edit text (design)
+participant View as v
+participant Controller as c
+participant Model as m
+v -> c : handleEvent(5)
+c -> m : markAsUnsaved()
+@enduml

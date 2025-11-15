@@ -3,7 +3,6 @@
 class View{
 - JTextArea
 
-+ handleEvent()
 + runUI()
 + showSaveOptions()
 + showFileChooser()
@@ -14,6 +13,7 @@ class View{
 
 class Controller{
 + initialize()
++ handleEvent()
 }
 
 class Model{

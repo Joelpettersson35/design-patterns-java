@@ -3,12 +3,8 @@ title save file as
 participant "user" as u
 participant "app" as a
 u -> a : handleEvent(save file as)
-a -> a : showFileChooser()
-u -> a : [user input]
-alt user chooses file
-a -> a : setCurrFilePath(path)
-a -> a : getText()
+a -> u : askUserForSaveLocation()
+u -> a : fileSelected
+a -> a : setFilePath(path)
 a -> a : saveToFile(text)
-else user cancels
-end
 @enduml

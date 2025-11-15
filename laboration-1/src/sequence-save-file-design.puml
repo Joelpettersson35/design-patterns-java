@@ -1,0 +1,14 @@
+@startuml
+title save file (design)
+participant View as v
+participant Controller as c
+participant Model as m
+v -> c : handleEvent(save file)
+c -> m : hasFilePath?
+opt no file path
+c -> v : askForSaveLocation()
+v -> c : fileSelected
+c -> m : setFilePath()
+end
+c -> m : saveToFile()
+@enduml
