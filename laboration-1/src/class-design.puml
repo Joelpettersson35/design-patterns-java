@@ -1,25 +1,35 @@
 @startuml
 
-class View{
-- JTextArea
+class View {
+  - JTextArea textArea
 
-+ runUI()
-+ showSaveOptions()
-+ showFileChooser()
-+ showErrorMessage()
-+ insertText(text)
-+ getText()
+  + runUI()
+  + showSaveOptions()
+  + showFileChooser()
+  + showErrorMessage()
+  + insertText(text)
+  + getText()
 }
 
-class Controller{
-+ initialize()
-+ handleEvent()
+class Controller {
+  - View view
+  - Model model
+
+  + initialize()
+  + handleEvent()
 }
 
-class Model{
-+ checkFileStatus()
-+ saveToFile(text)
-+ setCurrFilePath(path)
-+ loadFromFile(path)
+class Model {
+  - String currFilePath
+
+  + checkFileStatus()
+  + saveToFile(text)
+  + setCurrFilePath(path)
+  + loadFromFile(path)
 }
+
+Controller --> View : interacts with
+Controller --> Model : updates / reads
+View ..> Controller : sends events
+
 @enduml
