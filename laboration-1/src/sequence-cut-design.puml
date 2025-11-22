@@ -1,0 +1,7 @@
+@startuml
+title cut text (design) (NY FÖR LABB 2)
+participant View as v
+participant Controller as c
+v -> c : handleEvent(8)
+c -> v : cutText()
+@enduml
