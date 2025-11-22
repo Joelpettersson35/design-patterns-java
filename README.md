@@ -35,6 +35,12 @@
 <img width="438" height="574" alt="image" src="https://github.com/user-attachments/assets/66991be5-6dd6-45c0-80e7-3ef453f192c7" />
 <h4>Edit text (design)</h4>
 <img width="310" height="187" alt="image" src="https://github.com/user-attachments/assets/9f500c0f-7e1f-4703-b179-a426e3d58be9" />
+<h4>Cut text (design) (NY FÖR LABB 2)</h4>
+<img width="271" height="187" alt="image" src="https://github.com/user-attachments/assets/98ae0346-0c37-4678-99ad-77f6ebf8aeb3" />
+<h4>Copy text (design) (NY FÖR LABB 2)</h4>
+<img width="282" height="187" alt="image" src="https://github.com/user-attachments/assets/a525ae00-2de1-4a82-ac4d-30f2f4137c70" />
+<h4>Paste text (design) (NY FÖR LABB 2)</h4>
+<img width="288" height="187" alt="image" src="https://github.com/user-attachments/assets/1c75ada6-7d19-422d-946f-65c9b2f142eb" />
 <h4>Save file (design)</h4>
 <img width="346" height="335" alt="image" src="https://github.com/user-attachments/assets/f8f20a0c-00b8-4605-8e58-683be6ed284c" />
 <h4>Save file as (design)</h4>
@@ -42,6 +48,9 @@
 <h3>Class diagram för design</h3>
 <h4>Class diagram (design)</h4>
 <img width="211" height="574" alt="image" src="https://github.com/user-attachments/assets/5fb5dd37-4a11-4744-88fc-4aa2a8e6b141" />
+<h4>Class diagram (design) (UPPDATEREAD)</h4>
+<img width="550" height="647" alt="image" src="https://github.com/user-attachments/assets/12432cda-624c-4e09-a671-aae04f2061a9" />
+
 
 
 
