@@ -4,9 +4,9 @@ public class ViewFactory {
 	
     public View createView(String type) {
         switch (type.toLowerCase()) {
-            case "gui":
+            case "1":
                 return new GUIView();
-            case "cli":
+            case "2":
                 return new CLIView();
             default:
                 throw new IllegalArgumentException("Unknown view type");

@@ -21,6 +21,30 @@ import controller.Controller;
 
 public interface View {
 	
+	public void setController(Controller c);
+	
 	public void runUI();
+	
+	public boolean askToSave();
+
+	public Path askForSaveDir();
+
+	public String getText();
+
+	public Path askForOpenDir();
+
+	public void displayText(String txt);
+
+	public void updateHeader(String string);
+
+	public void showErrorMsg(String string);
+
+	public void newFile();
+
+	public void cutSelectedText();
+
+	public void copyText();
+
+	public void pasteText();
 	
 }

@@ -52,11 +52,12 @@ public class Model {
 	public String openFile() {
 		String txt;
 		try {
+			//System.out.println(filePath);
 			txt = Files.readString(filePath);
 		} 
 		catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 			return null;
 		}
 		return txt;

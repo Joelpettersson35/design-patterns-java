@@ -21,7 +21,7 @@ import controller.Controller;
 
 public class GUIView implements View {
 
-Controller controller;
+	Controller controller;
 	
 	private JFrame frame;
 	private JTextArea textArea;
@@ -134,7 +134,7 @@ Controller controller;
 		return null;
 	}
 	
-	public Boolean askToSave() {
+	public boolean askToSave() {
 		String[] options = { "Save", "Don't Save" };
 		int choice = JOptionPane.showOptionDialog(
 				frame, 
@@ -161,7 +161,7 @@ Controller controller;
 		return textArea.getText();
 	}
 	
-	public void clearText() {
+	public void newFile() {
 		textArea.setText("");
 	}
 	
@@ -183,5 +183,11 @@ Controller controller;
 	
 	public void updateHeader(String name) {
 		frame.setTitle(name);
+	}
+
+	@Override
+	public void setController(Controller c) {
+		controller = c;
+		
 	}
 }
