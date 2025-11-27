@@ -7,6 +7,16 @@ import model.Model;
 import view.View;
 
 //this skickar adressen till objektet från minnet
+//skillnaden mellan text och rit programmet är att... composite i labb 4
+//Creational, Structural och behaviorual...
+//Klassrelation (arv)
+//objektrelation (agregat och association)
+//Adapter = översätter anropsinterface (hårtorken, från existerande interface till nödvändigt interface
+//Annan adapter (Object adapter / wrapper) = association till den implementerade klassen
+//Facade skapar minimala kontaktytor mellan programdelar/moduler/osv
+//Composite = containrar kan innehålla containrar och löv men löv kan bara vara löv
+//Chain of responsibilty
+//kolla main i checkauthoroty för hur man länkar lista av object, måste dock inte vara länkad lista kan vara composite
 
 public class Controller {
 	View view;
@@ -95,10 +105,8 @@ public class Controller {
 			}
 			break;
 		case 5:
-			//System.out.println("edit text");
-			if(model.getFilePath() != null) {
-				view.updateHeader(model.getFilePath().getFileName()+ "*");
-			}
+			System.out.println("edit text");
+			view.updateHeader(model.getFilePath().getFileName()+ "*");
 			model.setIsSaved(false);
 			break;
 		case 6:
