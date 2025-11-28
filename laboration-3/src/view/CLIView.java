@@ -37,9 +37,7 @@ public class CLIView implements View {
 			catch(IOException e) {
 				e.printStackTrace();
 			}
-			
 		}
-		
 	}
 
 	@Override
@@ -69,7 +67,6 @@ public class CLIView implements View {
 			    builder.append(line).append("\n");
 			    line = r.readLine();
 			}
-			
 			System.out.println("SAVED");
 			return builder.toString();
 		}
@@ -97,12 +94,12 @@ public class CLIView implements View {
 
 	@Override
 	public void displayText(String txt) {
-		System.out.println("Content:\n" + txt);
+		System.out.println(txt);
 	}
 
 	@Override
 	public void updateHeader(String file) {
-		System.out.println("Current file: " + file);
+		System.out.println("CURRENT FILE: " + "\"" + file + "\"");
 	}
 
 	@Override
