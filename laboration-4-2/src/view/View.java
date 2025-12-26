@@ -38,8 +38,8 @@ public class View {
 		    }
 		});
 		
-		ip = new InputPanel(controller);
-		dp = new DrawingPanel(dc);
+		ip = new InputPanel(this);
+		dp = new DrawingPanel(dc, this);
 		dp.setBackground(Color.WHITE);
 		
 		frame.add(ip, BorderLayout.NORTH);
@@ -57,4 +57,27 @@ public class View {
 		dp.repaint();
 	}
 
+	public void facilitateClick(int x, int y) {
+		controller.handleClick(x, y);
+	}
+	
+	public void addCircleFromUI(int x1, int y1, int width, int height, int lineWidth, Color lineColor, Color areaColor) {
+		controller.addCircle(x1, y1, width, height, lineWidth, lineColor, areaColor);
+	}
+	
+	public void addRectFromUI(int x1, int y1, int width, int height, int lineWidth, Color lineColor, Color areaColor) {
+		controller.addRect(x1, y1, width, height, lineWidth, lineColor, areaColor);
+	}
+	
+	public void addLineFromUI(int x1, int y1, int width, int height, int lineWidth, Color areaColor) {
+		controller.addLine(x1, y1, width, height, lineWidth, areaColor);
+	}
+	
+	public void handle(int x1, int y1) {
+		controller.handleClick(x1, y1);
+	}
+	
+	public void remove() {
+		controller.removeShape();
+	}
 }

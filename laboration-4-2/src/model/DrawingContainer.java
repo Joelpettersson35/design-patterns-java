@@ -6,6 +6,7 @@ import java.util.Enumeration;
 import java.util.Vector;
 
 import view.DrawingUtilInterface;
+import view.MouseRequest;
 
 
 // TODO: Auto-generated Javadoc
@@ -19,8 +20,7 @@ public class DrawingContainer implements DrawingComposite, Cloneable {
 	/** The v This attribute will keep the leaf for this container. */
 	private Vector<DrawingComposite> v;
 	
-	
-	
+	private DrawingComposite selectedComposite; //variabel för att hålla den markerade figuren SMART ATT HÅLLA HÄR?!?!?! TODO KOLLA FACADE DEFINITION FÖR ATT VETA VART DENNA VARIABEL BÖR LIGGA
 	/**
 	 * Instantiates a new drawing container. It also instantiates the Vector used for the members the container holds.
 	 */
@@ -42,6 +42,22 @@ public class DrawingContainer implements DrawingComposite, Cloneable {
 			t= e.nextElement();
 			t.draw(g);
 		}
+	}
+	
+	@Override
+	public DrawingComposite handle(int x, int y) {
+		for(int i = v.size() - 1; i >= 0; i--) {
+			DrawingComposite result = v.elementAt(i).handle(x, y);
+			if(result != null) {
+				selectedComposite = result;
+			}
+		}
+		
+		return selectedComposite;
+	}
+	
+	public DrawingComposite getSelected() {
+		return selectedComposite;
 	}
 	
 	/* (non-Javadoc)

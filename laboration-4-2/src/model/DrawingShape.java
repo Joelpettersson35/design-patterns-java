@@ -191,4 +191,9 @@ public class DrawingShape implements DrawingComposite {
 		
 	}
 	
+	public DrawingComposite handle(int x, int y) {
+		return null;
+		
+	}
+	
 }

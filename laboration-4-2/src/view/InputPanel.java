@@ -16,7 +16,7 @@ import controller.Controller;
 
 public class InputPanel extends JPanel {
 	
-	private Controller controller;
+	private View view;
 
 	private JMenu menu;
 
@@ -56,8 +56,8 @@ public class InputPanel extends JPanel {
 	
 	private JButton addBtn;
 	
-	public InputPanel(Controller controller) {
-		this.controller = controller;
+	public InputPanel(View v) {
+		this.view = v;
 		setLayout(new GridLayout(1, 6, 0, 5));
 		shapeChooser = new JComboBox<>(new String[]{"Circle", "Rectangle", "Line"});
 		x1Field = new JTextField("10", 4);
@@ -141,15 +141,15 @@ public class InputPanel extends JPanel {
 			int lineWidth = Integer.parseInt(lineWidthField.getText());
 			
 			if(choice.equals("Circle")) {
-				controller.addCircle(x1, y1, width, height, lineWidth, lineColor, areaColor);
+				view.addCircleFromUI(x1, y1, width, height, lineWidth, lineColor, areaColor);
 			}
 			
 			else if(choice.equals("Rectangle")) {
-				controller.addRect(x1, y1, width, height, lineWidth, lineColor, areaColor);
+				view.addRectFromUI(x1, y1, width, height, lineWidth, lineColor, areaColor);
 			}
 			
 			else {
-				controller.addLine(x1, y1, width, height, lineWidth, areaColor);
+				view.addLineFromUI(x1, y1, width, height, lineWidth, areaColor);
 			}
 		}
 		

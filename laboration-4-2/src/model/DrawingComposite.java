@@ -41,6 +41,9 @@ public interface DrawingComposite extends Serializable {
     * @return the x1
     */
    
+   public DrawingComposite handle(int x, int y);
+   
+   
    public void setDrawingAPI(DrawingUtilInterface di);
 
    /**

@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.Color;
 
+import model.DrawingComposite;
 import model.DrawingFacade;
 import view.View;
 
@@ -18,8 +19,8 @@ public class Controller {
 	}
 	
 	public void initialize() {
-		view.setContainer(df.getContainer());
 		df.loadDrawing();
+		view.setContainer(df.getContainer());
 		view.runUI();
 	}
 	
@@ -37,9 +38,19 @@ public class Controller {
 		df.addLine(x1, y1, w, h, width, color);
 		view.repaint();
 	}
+	
+	public void removeShape() {
+		if(df.remove()) {
+			view.repaint();
+		}
+	}
 
 	public void closeApp() {
 		df.saveDrawing();
 		System.exit(0);
+	}
+
+	public void handleClick(int x, int y) {
+		df.handle(x, y);
 	}
 }

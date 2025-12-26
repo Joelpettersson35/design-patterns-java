@@ -14,6 +14,7 @@ import view.DrawingUtil;
 public class DrawingFacade {
 	
 	private DrawingContainer dc;
+	
 	private DrawingUtil du;
 
 	public DrawingFacade() {
@@ -44,6 +45,16 @@ public class DrawingFacade {
 		dc.draw(g);
 	}
 	
+	public Boolean remove() {
+		DrawingComposite selected = dc.getSelected();
+		if(selected != null) {
+			dc.remove(selected);
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public void saveDrawing() {
 		try {
 			FileOutputStream fos = new FileOutputStream("test.drawing");
@@ -65,11 +76,20 @@ public class DrawingFacade {
 			
 			dc = (DrawingContainer) ois.readObject();
 			System.out.println("Object loaded from file");
+			ois.close();
 		}
 		
 		catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public Boolean handle(int x, int y) {
+		if(dc.handle(x, y) != null) {
+			return true;
+		}
+		
+		return false;
 	}
 	
 }
