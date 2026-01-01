@@ -191,9 +191,31 @@ public class DrawingShape implements DrawingComposite {
 		
 	}
 	
-	public DrawingComposite handle(int x, int y) {
+	@Override
+	public DrawingComposite handlePress(int x, int y) {
 		return null;
 		
 	}
+
+	@Override
+	public Boolean move(int x, int y) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Boolean resize(int x, int y, String corner) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public String checkCorners(int x, int y) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 }

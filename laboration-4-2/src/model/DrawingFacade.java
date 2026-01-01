@@ -84,12 +84,21 @@ public class DrawingFacade {
 		}
 	}
 	
-	public Boolean handle(int x, int y) {
-		if(dc.handle(x, y) != null) {
+	public Boolean handlePress(int x, int y) {
+		if(dc.handlePress(x, y) != null) {
 			return true;
 		}
 		
 		return false;
+	}
+	
+	public Boolean handleDrag(int x, int y) {
+		if(dc.handleDrag(x, y)) {
+			return true;
+		}
+		
+		return false;
+		//dc.resize(x, y);
 	}
 	
 }

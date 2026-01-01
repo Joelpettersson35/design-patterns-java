@@ -154,7 +154,8 @@ public class InputPanel extends JPanel {
 		}
 		
 		catch(Exception e) {
-			//CALL CONTROLLER TO SHOW ERROR WINDOW
+			//anropa controllern att visa felmeddelande
+			e.printStackTrace();
 		}
 		
 	}

@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
@@ -22,7 +23,7 @@ import model.DrawingComposite;
  * DrawingAPI this was direct part of the DrawingAPI, but to enable serialization in this version this is
  * moved to a separate class. 
  */
-public class DrawingPanel extends JPanel implements MouseListener, KeyListener{
+public class DrawingPanel extends JPanel implements MouseListener, MouseMotionListener, KeyListener{
 	
 	/** The DrawingComposite attribute. This should reference the DrawingComposite we want to draw on the
 	 * screen estate. */
@@ -52,6 +53,7 @@ public class DrawingPanel extends JPanel implements MouseListener, KeyListener{
 		this.dc=dc;
 		this.view = v;
 		addMouseListener(this);
+		addMouseMotionListener(this);
 		
 		im.put(KeyStroke.getKeyStroke(KeyEvent.VK_BACK_SPACE, 0), "delete");
 		im.put(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0), "delete");
@@ -79,22 +81,45 @@ public class DrawingPanel extends JPanel implements MouseListener, KeyListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		int x = e.getX();
-		int y = e.getY();
-		
-		System.out.println("click " + x + " " + y);
-		view.handle(x, y);
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
+		int x = e.getX();
+		int y = e.getY();
+		
+		System.out.println("click " + x + " " + y);
+		view.handlePress(x, y);
 		
 	}
+	
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
+		//int x = e.getX();
+		//int y = e.getY();
 		
+		//System.out.println("release " + x + " " + y);
+		//view.handleRelease(x, y);
 	}
+	
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		int x = e.getX();
+		int y = e.getY();
+		
+		//System.out.println("dragging " + x + " " + y);
+		view.handleDrag(x, y);
+	}
+	
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+	
+	}
+	
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -119,7 +144,6 @@ public class DrawingPanel extends JPanel implements MouseListener, KeyListener{
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
 	}
 	
 }

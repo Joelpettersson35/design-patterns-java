@@ -58,7 +58,7 @@ public class View {
 	}
 
 	public void facilitateClick(int x, int y) {
-		controller.handleClick(x, y);
+		controller.handlePress(x, y);
 	}
 	
 	public void addCircleFromUI(int x1, int y1, int width, int height, int lineWidth, Color lineColor, Color areaColor) {
@@ -73,8 +73,12 @@ public class View {
 		controller.addLine(x1, y1, width, height, lineWidth, areaColor);
 	}
 	
-	public void handle(int x1, int y1) {
-		controller.handleClick(x1, y1);
+	public void handlePress(int x1, int y1) {
+		controller.handlePress(x1, y1);
+	}
+	
+	public void handleDrag(int x1, int y1) {
+		controller.handleDrag(x1, y1);
 	}
 	
 	public void remove() {

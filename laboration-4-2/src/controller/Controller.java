@@ -50,7 +50,15 @@ public class Controller {
 		System.exit(0);
 	}
 
-	public void handleClick(int x, int y) {
-		df.handle(x, y);
+	public void handlePress(int x, int y) {
+		df.handlePress(x, y);
 	}
+	
+	public void handleDrag(int x, int y) {
+		if(df.handleDrag(x, y)) {
+			view.repaint();
+		}
+			
+	}
+
 }

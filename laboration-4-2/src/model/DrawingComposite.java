@@ -41,7 +41,17 @@ public interface DrawingComposite extends Serializable {
     * @return the x1
     */
    
-   public DrawingComposite handle(int x, int y);
+   public DrawingComposite handlePress(int x, int y);
+   
+   //public Boolean handleRelease(int x, int y);
+   
+   //public Boolean checkBoundaries(int x, int y);
+   
+   public String checkCorners(int x, int y);
+   
+   public Boolean move(int x, int y);
+   
+   public Boolean resize(int x, int y, String corner);
    
    
    public void setDrawingAPI(DrawingUtilInterface di);
