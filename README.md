@@ -1,4 +1,7 @@
 <h1>Resultat från analys</h1>
+<p>Laboration 3 utgör en simpel texteditor som kan läsa och spara till fil. Programmet har implementerat design mönstret "factory" för att tillåta användaren att byta gränssnitt under körtid</p>
+
+<p>Laboration 4 är ett ritprogram som implementerar mönster som MVC, Composite, Facade och Adapter</p>
 
 <h3>Use case diagram</h3>
 <img width="261" height="484" alt="image" src="https://github.com/user-attachments/assets/3c141e84-deef-40ca-9527-6df7357cc8a1" />
